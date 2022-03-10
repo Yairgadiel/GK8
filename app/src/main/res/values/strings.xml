@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GK8</string>
+
+    <string name="timestamp_format">Time: %d</string>
+    <string name="value_format">Value: %s$</string>
+    <string name="from_format">From: %s</string>
+    <string name="to_format">To: %s</string>
+    <string name="confirmations_format">Confirmations: %d</string>
+    <string name="hash_format">Hash: %s</string>
+    <string name="address_input_hint">Transaction address</string>
+    <string name="no_transactions_msg">No transactions were received for address</string>
+    <string name="search_cd">search</string>
+</resources>

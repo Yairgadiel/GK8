@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.TransactionsActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/address_input_layout"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toStartOf="@id/search_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/address_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/address_input_hint"
+            android:background="@android:color/white"
+            android:inputType="text"
+            android:textSize="@dimen/input_text_size" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:layout_width="@dimen/search_btn_size"
+        android:layout_height="@dimen/search_btn_size"
+        android:id="@+id/search_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/address_input_layout"
+        app:layout_constraintTop_toTopOf="@id/address_input_layout"
+        app:layout_constraintBottom_toBottomOf="@id/address_input_layout"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_search"
+        android:contentDescription="@string/search_cd" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/transactions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginHorizontal="@dimen/medium_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address_input_layout" />
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="@dimen/loader_size"
+        android:layout_height="@dimen/loader_size"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:elevation="90dp"
+        app:layout_constraintBottom_toBottomOf="@id/transactions"
+        app:layout_constraintEnd_toEndOf="@id/transactions"
+        app:layout_constraintStart_toStartOf="@id/transactions"
+        app:layout_constraintTop_toTopOf="@id/transactions" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
